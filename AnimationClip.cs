@@ -35,13 +35,16 @@ namespace BinarySphere
             }
         }
 
-        public void ResetImageIdx(){
+        public void ResetImageIdx()
+        {
             CurrentImageIdx = 0;
         }
 
-        public void SetImageIdxLast(){
-            CurrentImageIdx=ClipLength-1;
+        public void SetImageIdxLast()
+        {
+            CurrentImageIdx = ClipLength - 1;
         }
+
         public Bitmap GetCurrentImage() =>
             Images[CurrentImageIdx];
 
