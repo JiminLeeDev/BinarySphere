@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Drawing;
 
 namespace BinarySphere
@@ -36,6 +35,13 @@ namespace BinarySphere
             }
         }
 
+        public void ResetImageIdx(){
+            CurrentImageIdx = 0;
+        }
+
+        public void SetImageIdxLast(){
+            CurrentImageIdx=ClipLength-1;
+        }
         public Bitmap GetCurrentImage() =>
             Images[CurrentImageIdx];
 
