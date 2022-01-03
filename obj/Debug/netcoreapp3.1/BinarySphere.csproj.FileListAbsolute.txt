@@ -1,0 +1,13 @@
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.exe
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.deps.json
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.runtimeconfig.json
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.runtimeconfig.dev.json
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.dll
+D:\Projects\BinarySphere\bin\Debug\netcoreapp3.1\BinarySphere.pdb
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.csprojAssemblyReference.cache
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.AssemblyInfoInputs.cache
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.AssemblyInfo.cs
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.csproj.CoreCompileInputs.cache
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.dll
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.pdb
+D:\Projects\BinarySphere\obj\Debug\netcoreapp3.1\BinarySphere.genruntimeconfig.cache
