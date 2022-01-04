@@ -20,7 +20,7 @@ namespace BinarySphere
 
         protected Object()
         {
-            AddAnimationClip(CurrentState, new AnimationClip(new int[] { }, new Bitmap[] { }));
+            AddAnimationClip(CurrentState, new AnimationClip(new int[] {  }, new Bitmap[] { }));
         }
 
         private async void WaitAnimationFrame(long fps)
@@ -37,19 +37,20 @@ namespace BinarySphere
             timer.Stop();
         }
 
-        protected Graphics Draw(long fps)
+        public Bitmap Draw(long fps)
         {
-            var result = Graphics.FromImage(new Bitmap(Size.Width, Size.Height));
+            var result = new Bitmap(Size.Width, Size.Height);
+            var gfx = Graphics.FromImage(result);
 
-            result.Clear(BackgroundColor);
+            BackgroundColor = Color.FromArgb(new Random().Next(0, 256), new Random().Next(0, 256), new Random().Next(0, 256), new Random().Next(0, 256));
+            gfx.Clear(BackgroundColor);
 
-            result.DrawImage(AnimationClips[CurrentState].GetCurrentImage(), Location);
+            gfx.DrawImage(AnimationClips[CurrentState].GetCurrentImage(), new Point(0, 0));
 
             WaitAnimationFrame(fps);
 
             return result;
         }
-
 
         public void AddAnimationClip(string state, AnimationClip clip)
         {
