@@ -12,15 +12,17 @@ namespace BinarySphere
 
         public Size Size { get; protected set; } = new Size(50, 50);
 
-        protected string CurrentState { get; set; } = "Idle";
+        protected string CurrentState { get; set; }
 
         protected Color BackgroundColor { get; set; } = Color.Green;
 
         private Dictionary<string, AnimationClip> AnimationClips { get; set; } = new Dictionary<string, AnimationClip>();
 
-        protected Object()
+        protected Object(string state, AnimationClip clip)
         {
-            AddAnimationClip(CurrentState, new AnimationClip(new int[] { }, new Bitmap[] { }));
+            CurrentState = state;
+
+            AddAnimationClip(state, clip);
         }
 
         private async void WaitAnimationFrame(long fps)
