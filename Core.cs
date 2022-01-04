@@ -7,7 +7,13 @@ namespace BinarySphere
     public partial class Core
     {
         private bool CloseRequest { get; set; } = false;
-        private bool IsRunning { get; set; } = false;
+
+        private Stopwatch Timer = new Stopwatch();
+
+        public bool IsInitialized { get; private set; } = false;
+        public bool IsTerminated { get; private set; } = false;
+
+
         public long Delay { get; private set; } = 20;
         public long FPS { get; private set; } = 50;
 
@@ -18,11 +24,8 @@ namespace BinarySphere
 
         public Action Routine;
 
-        public Stopwatch Timer = new Stopwatch();
-
         public Core()
         {
-            IsRunning = false;
             CloseRequest = false;
         }
 
@@ -41,7 +44,8 @@ namespace BinarySphere
         {
             Initializing?.Invoke();
             Initialized?.Invoke();
-            Run();
+
+            IsInitialized = true;
         }
 
         public void Terminate()
@@ -53,23 +57,23 @@ namespace BinarySphere
             Terminated?.Invoke();
         }
 
-        private async void Run()
+        public async void Run()
         {
-            while (CloseRequest)
+            IsTerminated = false;
+
+            while (!CloseRequest)
             {
                 Timer.Restart();
 
-                IsRunning = true;
-
-                while (Timer.ElapsedMilliseconds < FPS)
+                while (Timer.ElapsedMilliseconds < Delay)
                 {
                     await Task.Delay(1);
                 }
 
                 Routine?.Invoke();
-
-                IsRunning = false;
             }
+
+            IsTerminated = true;
         }
     }
 }
