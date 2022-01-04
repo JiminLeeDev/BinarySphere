@@ -20,7 +20,7 @@ namespace BinarySphere
 
         protected Object()
         {
-            AddAnimationClip(CurrentState, new AnimationClip(new int[] {  }, new Bitmap[] { }));
+            AddAnimationClip(CurrentState, new AnimationClip(new int[] { }, new Bitmap[] { }));
         }
 
         private async void WaitAnimationFrame(long fps)
